@@ -1,20 +1,21 @@
-def rotate_array(nums, k):
-    n = len(nums)
+def rotate_array_elements(nums_list, rotation_count):
+    length = len(nums_list)
 
-    # Handle cases where k is greater than the array length
-    k = k % n
+    # Handle cases where rotation_count is greater than the array length
+    rotation_count = rotation_count % length
 
     # Reverse the entire array
-    nums.reverse()
+    nums_list.reverse()
 
-    # Reverse the first k elements
-    nums[:k] = reversed(nums[:k])
+    # Reverse the first rotation_count elements
+    nums_list[:rotation_count] = reversed(nums_list[:rotation_count])
 
     # Reverse the remaining elements
-    nums[k:] = reversed(nums[k:])
+    nums_list[rotation_count:] = reversed(nums_list[rotation_count:])
 
 
-numbers = [1,2,3,4,5,6]
-k = 3
+numbers_list = [1, 2, 3, 4, 5, 6]
+rotation_count = 3
 
-print(rotate_array(numbers, k))
+rotate_array_elements(numbers_list, rotation_count)
+print(numbers_list)

@@ -1,19 +1,18 @@
-def remove_Duplicates(nums):
+def remove_duplicates_from_list(nums_list):
 
-    n = len(nums)
+    length = len(nums_list)
 
-    if n == 0 or n == 1:
-
-        return n
+    if length == 0 or length == 1:
+        return length
     
-    index = 0
+    new_index = 0
 
-    for i in range(1,n):
-        if nums[i] != nums[index]:
-            index += 1 
-            nums[index] = nums[i]
+    for i in range(1, length):
+        if nums_list[i] != nums_list[new_index]:
+            new_index += 1 
+            nums_list[new_index] = nums_list[i]
 
-    return index + 1 
+    return new_index + 1 
 
-numbers = [1,1,2,2,3]
-print(remove_Duplicates(numbers))
+numbers_list = [1, 1, 2, 2, 3]
+print(remove_duplicates_from_list(numbers_list))
